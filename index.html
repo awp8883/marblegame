@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">Marble Game</h1>
+    <hr>
+    <div class="betsDiv">
+        <form class="betsForm">
+            <input class="betInput" type="number" id="redBet" placeholder="Player Red Bet"><br>
+            <input class="betInput" type="number" id="blueBet" placeholder="Player Blue Bet"><br>
+            <input class="betInput" type="number" id="greenBet" placeholder="Player Green Bet"><br>
+            <input class="betInput" type="number" id="yellowBet" placeholder="Player Yellow Bet"><br>
+        </form>
+            <button id="submit" class="submit">Next</button>
+            <h2 id="betsOutput" class="title"></h1>
+    </div>
+    <hr id="diceHr" class="title">
+<div id="diceDiv" class="diceDiv">
+    <button class="btn" id="diceBtn">Roll Color Dice</button>
+    <h1 class="output" id="output"></h1>
+</div>
+<hr id="marbleHr" class="title">
+<div id="marbleDiv" class="diceDiv">
+    <button class='btn' id="marbleBtn">Pick Marble</button>
+    <h1 class="output" id="output2"></h1>
+    </div>
+</body>
+<script>
+$(document).ready(function(){
+    console.log('Ready')
+})
+$('#submit').on('click',()=>{
+    let redBet = $('#redBet').val()
+    let blueBet = $('#blueBet').val()
+    let greenBet = $('#greenBet').val()
+    let yellowBet = $('#yellowBet').val()
+    let totalBets = parseInt(redBet) + parseInt(blueBet) + parseInt(greenBet) + parseInt(yellowBet)
+    $('#betsOutput').html(`<span style="color:red">Player Red Bet:${redBet}</span><br><span style="color:blue">Player Blue Bet: ${blueBet}</span><br><span style="color:green">Player Green Bet: ${greenBet}</span><br><span style="color:yellow">Player Yellow Bet: ${yellowBet}</span><br>Total Bets: ${totalBets}`)
+    $('.betsForm').fadeOut()
+    $('#submit').fadeOut()
+    $('#diceHr').fadeIn()
+    $('#diceDiv').fadeIn()
+    $('#marbleHr').fadeIn()
+    $('#marbleDiv').fadeIn()
+})
+$('#marbleBtn').on('click',()=>{
+    let marbleColor = undefined
+    let random = Math.floor(Math.random() * 4) + 1
+    if(random === 1){
+        marbleColor = 'Red'
+        $('#output2').css('color','red')
+    }else if(random === 2){
+        marbleColor = 'Blue'
+        $('#output2').css('color','blue')
+    }else if(random === 3){
+        marbleColor = 'Yellow'
+        $('#output2').css('color','yellow')
+    }else if(random === 4){
+        marbleColor = 'Green'
+        $('#output2').css('color','green')
+    }
+    $('#output2').html(marbleColor)
+})
+
+$('#diceBtn').on('click',()=>{
+    let diceColor = undefined
+    let random = Math.floor(Math.random() * 4) + 1
+    if(random === 1){
+        diceColor = 'Red'
+        $('#output').css('color','red')
+    }else if(random === 2){
+        diceColor = 'Blue'
+        $('#output').css('color','blue')
+    }else if(random === 3){
+        diceColor = 'Yellow'
+        $('#output').css('color','yellow')
+    }else if(random === 4){
+        diceColor = 'Green'
+        $('#output').css('color','green')
+    }
+    $('#output').html(diceColor)
+})
+
+
+</script>
+</html>

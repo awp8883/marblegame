@@ -1,0 +1,91 @@
+body{
+    font-family: Helvetica;
+    background-color: lightgray;
+}
+.title{
+    color: lightcoral;
+    text-align: center;
+}
+hr{
+    background-color: lightcoral;
+    height: 4px;
+}
+.btn{
+    border-radius: 5%;
+    background-color: lightcoral;
+    border-color: white;
+    text-align: center;
+    margin: auto;
+    height: 40px;
+    width: 80px;
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    transition-duration: 500ms;
+}
+.btn:hover{
+    background-color: white;
+    border-color: lightcoral;
+    color: lightcoral;
+    cursor:pointer;
+    transition-duration: 500ms;
+    box-shadow: 5px 5px 5px lightgray;
+}
+.diceDiv{
+    text-align: center;
+    margin:auto;
+}
+.output{
+    text-align: center;
+    font-weight: bold;
+    color: lightcoral;
+}
+.betsDiv{
+    text-align: center;
+    margin:auto;
+}
+.betsForm{
+    text-align: center;
+    margin: auto;
+    color: lightcoral;
+}
+.submit{
+    border-radius: 5%;
+    background-color: lightcoral;
+    border-color: white;
+    text-align: center;
+    margin: auto;
+    height: 40px;
+    width: 80px;
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    transition-duration: 500ms;
+}
+.submit:hover{
+    background-color: white;
+    border-color: lightcoral;
+    color: lightcoral;
+    cursor:pointer;
+    transition-duration: 500ms;
+    box-shadow: 5px 5px 5px lightgray;
+}
+.betInput{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.betInput::placeholder{
+    color:lightcoral
+}
+#diceDiv{
+    display:none
+}
+#marbleDiv{
+    display:none;
+}
+#diceHr{
+    display:none
+}
+#marbleHr{
+    display: none;
+}
